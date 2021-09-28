@@ -64,7 +64,13 @@ public class programa {
 			case 3:
 				System.out.println("Valor a ser Sacado: ");
 				conta.sacarSaldo(entrada.nextDouble());
-				
+				System.out.println("Saldo: "+ conta.getsaldoConta());
+			break;
+			
+			case 4:
+				System.out.println("Coloque Novo nome: ");
+				conta.setnomeTitular(entrada.next());
+				System.out.println("Seu novo  nome "+ conta.getnomeTitular());
 			break;
 			
 			default:
