@@ -3,16 +3,16 @@ package entidades;
 public class conta {
 
 	private int numeroConta;
-	private String nomeTitular;
+	private String nomeTitular; 
 	private double saldoConta;
 	
 	public conta() {
 		
 	}
 	
-	public conta(String nomeTitular, int numeroConta) {
-		this.nomeTitular = nomeTitular;
+	public conta(int numeroConta, String nomeTitular) {		
 		this.numeroConta = numeroConta;
+		this.nomeTitular = nomeTitular;
 	}
 	
 	public conta(String nomeTitular, int numeroConta, double saldoConta) {
@@ -35,7 +35,6 @@ public class conta {
 		return nomeTitular;
 	}
 	
-	
 	public double getsaldoConta() {
 		return this.saldoConta;
 	}
@@ -56,7 +55,7 @@ public class conta {
 		
 	}
 	
-	public String toString() {
+	public String toString() { 
 		
 		return "Conta " + this.numeroConta + ", Nome: "+ this.nomeTitular + ", Saldo: $"+ this.saldoConta;
 	}

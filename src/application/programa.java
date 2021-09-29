@@ -18,13 +18,16 @@ public class programa {
 		System.out.println("Ao banco Caguei \n");
 		System.out.print("informe o numero da conta: ");
 		
-		conta conta = new conta();
-		conta.setnumeroConta(entrada.nextInt());
+		
+		int numeroConta = entrada.nextInt();
 		System.out.println();
 		
 		System.out.print("Informe o nome do titular: ");
-		conta.setnomeTitular(entrada.next());
+		String nomeTitular = entrada.next();
 		System.out.println();
+		
+		conta conta = new conta(numeroConta, nomeTitular);
+		conta(numeroConta,nomeTitular);
 		
 		System.out.print("Pretende fazer um deposito inicial (Y/N): ");
 		char depositoInicial = entrada.next().charAt(0);
@@ -67,7 +70,7 @@ public class programa {
 			String nome = conta.getnomeTitular();
 			
 			System.out.println("Ola! "+ nome);
-			System.out.println("Seu Saldo: "+ conta.getsaldoConta());
+			System.out.println("Seus Dados: "+ conta);
 			System.out.println("Escolha uma opçao ");
 			System.out.println("1. Deposito");
 			System.out.println("2. Sacar");
@@ -113,6 +116,11 @@ public class programa {
 		entrada.close();
 		
 
+	}
+
+	private static void conta(int numeroConta, String nomeTitular) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
