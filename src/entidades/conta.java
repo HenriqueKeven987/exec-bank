@@ -10,7 +10,17 @@ public class conta {
 		
 	}
 	
+	public conta(String nomeTitular, int numeroConta) {
+		this.nomeTitular = nomeTitular;
+		this.numeroConta = numeroConta;
+	}
 	
+	public conta(String nomeTitular, int numeroConta, double saldoConta) {
+		this.nomeTitular = nomeTitular;
+		this.numeroConta = numeroConta;
+		this.saldoConta = saldoConta;
+		
+	}
 	
 	
 	public void setnumeroConta(int numeroConta) {
@@ -44,6 +54,11 @@ public class conta {
 			System.out.println("Saque Realizado com Sucesso!");
 		}
 		
+	}
+	
+	public String toString() {
+		
+		return "Conta " + this.numeroConta + ", Nome: "+ this.nomeTitular + ", Saldo: $"+ this.saldoConta;
 	}
 	
 	 
