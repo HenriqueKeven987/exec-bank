@@ -42,22 +42,57 @@ public class programa {
 		}else {
 			conta = new conta(numeroConta, nomeTitular);
 		}
+		
+		int opcao = 0;
+		while(opcao != 4) {
 			
+			System.out.println("\n \n \n \n \n ");
+			System.out.println("Dados da conta: ");
+			System.out.println(conta);
+			System.out.println("esolha uma opçao");
+			System.out.println("1.Deposito");
+			System.out.println("2.saque");
+			System.out.println("3.Alterar Nome");
+			System.out.println("4.Sair");
+			System.out.print("Opção: ");
+			opcao = entrada.nextInt();
+			
+			switch (opcao) {
+				
+			case 1:				
+				System.out.println("\n Valor de Deposito: ");
+				conta.depositoServ(entrada.nextDouble());
+				System.out.println("Dados Atualizados:");
+				System.out.println(conta);
+			break;
+			
+			case 2:
+				System.out.println("\n Valor de Saque: ");
+				conta.sacarSaldo(entrada.nextDouble());
+				System.out.println("Dados Atualizados");
+				System.out.println(conta);
+			break;
+			
+			case 3:
+				System.out.println("\n Digite o novo Nome:");
+				conta.setnomeTitular(entrada.next());
+				System.out.println("Dados Atualizados");
+				System.out.println(conta);
+			break;
+			
+			default:
+				System.out.println("Opção Invalida!");				
+			break;
+			
+			}//fim do switch
+						
+		}//fim do while
 		
-		System.out.println("Dados da Conta: ");
-		System.out.println(conta);
+		for (int f = 0;f < 100 ;f++) {
+			System.out.println();
+		}
 		
-		System.out.println("entre com valor de deposito: ");
-		conta.depositoServ(entrada.nextDouble());
-		
-		System.out.println("Dados Atualizados: \n"+ conta);
-		
-		System.out.println("entre com valor de saque: ");
-		conta.sacarSaldo(entrada.nextDouble());
-		
-		System.out.println("Dados Atualizados: \n"+ conta);
-		
-		System.out.println("Obrigado "+ conta.getnomeTitular()+ "Volte sempre!");
+		System.out.println("Obrigado "+ conta.getnomeTitular()+ " Volte sempre!");
 				
 		
 		entrada.close();
