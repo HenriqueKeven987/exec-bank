@@ -13,6 +13,7 @@ public class programa {
 		
 		Locale.setDefault(Locale.US);
 		Scanner entrada = new Scanner(System.in);
+		conta conta;
 		
 		System.out.print("ola bem vindo! ");
 		System.out.println("Ao banco Caguei \n");
@@ -26,8 +27,6 @@ public class programa {
 		String nomeTitular = entrada.next();
 		System.out.println();
 		
-		conta conta = new conta(numeroConta, nomeTitular);
-		conta(numeroConta,nomeTitular);
 		
 		System.out.print("Pretende fazer um deposito inicial (Y/N): ");
 		char depositoInicial = entrada.next().charAt(0);
@@ -35,13 +34,15 @@ public class programa {
 		
 		if(depositoInicial == 'y') {
 		
-			System.out.print("Digite o valor de Deposito: ");
-			conta.depositoServ(entrada.nextDouble());
-			System.out.println("Seu Saldo E: "+ conta.getsaldoConta());
-			/*System.out.println("clique Qualquer para Continuar ");
-			char teste = entrada.next().charAt(0);*/
+			System.out.print("Digite o valor de Deposito: "); 
+			double depositoIni = entrada.nextDouble();
+			conta = new conta(numeroConta, nomeTitular, depositoIni);
 			
+			
+		}else {
+			conta = new conta(numeroConta, nomeTitular);
 		}
+			
 		
 		System.out.println("Dados da Conta: ");
 		System.out.println(conta);
@@ -57,70 +58,13 @@ public class programa {
 		System.out.println("Dados Atualizados: \n"+ conta);
 		
 		System.out.println("Obrigado "+ conta.getnomeTitular()+ "Volte sempre!");
-		
-		
-		/*
-		int opcao = 0;
-		
-		while(opcao != 4) {
-			for (int i = 0;i < 100;i++) {
-				System.out.println();
-			}
-			
-			String nome = conta.getnomeTitular();
-			
-			System.out.println("Ola! "+ nome);
-			System.out.println("Seus Dados: "+ conta);
-			System.out.println("Escolha uma opçao ");
-			System.out.println("1. Deposito");
-			System.out.println("2. Sacar");
-			System.out.println("3. Alterar nome");
-			System.out.println("4.Sair");
-			System.out.println("Digite: ");
-			opcao = entrada.nextInt();
-			
-			switch (opcao) {
-			case 1:
-				System.out.println("Digite o valor de deposito: ");
-				conta.depositoServ(entrada.nextDouble());
-				System.out.println("Saldo: "+ conta.getsaldoConta());
-			break;
-			
-			case 2:
-				System.out.println("Valor a ser Sacado: ");
-				conta.sacarSaldo(entrada.nextDouble());
-				System.out.println("Saldo: "+ conta.getsaldoConta());
-			break;
-			
-			case 3:
-				System.out.println("Coloque Novo nome: ");
-				conta.setnomeTitular(entrada.next());
-				System.out.println("Seu novo  nome "+conta.getnomeTitular());
-			break;
-			
-			case 4 :
-				System.out.println("Obrigado volte sempre " + conta.getnomeTitular());
-			break;
-			
-			default:
-				System.out.println("opcao invalida!");
-			}
-			
-			System.out.println("clique para continuar ");
-			char c = entrada.next().charAt(0); 							
-			
-		}*/
-		
-		
+				
 		
 		entrada.close();
 		
 
 	}
 
-	private static void conta(int numeroConta, String nomeTitular) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }

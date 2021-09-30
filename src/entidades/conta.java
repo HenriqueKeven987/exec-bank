@@ -15,16 +15,15 @@ public class conta {
 		this.nomeTitular = nomeTitular;
 	}
 	
-	public conta(String nomeTitular, int numeroConta, double saldoConta) {
+	public conta(int numeroConta, String nomeTitular ,double depositoInicial) {
 		this.nomeTitular = nomeTitular;
 		this.numeroConta = numeroConta;
-		this.saldoConta = saldoConta;
+		depositoServ(depositoInicial);
 		
-	}
+	}	
 	
-	
-	public void setnumeroConta(int numeroConta) {
-		this.numeroConta = numeroConta;
+	public int getnumeroConta() {
+		return this.numeroConta;
 	}
 	
 	public void setnomeTitular(String nomeTitular) {
@@ -48,8 +47,7 @@ public class conta {
 		if(saque > this.saldoConta) {
 			System.out.println("Saldo insuficiente!");			
 		}else {
-			this.saldoConta -= 5.0;
-			this.saldoConta -= saque;
+			this.saldoConta -= saque + 5.00;
 			System.out.println("Saque Realizado com Sucesso!");
 		}
 		
