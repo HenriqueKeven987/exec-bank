@@ -53,7 +53,7 @@ public class conta {
 		
 	}
 	
-	public String toString() { 
+	public String toString() {
 		
 		return "Conta " + this.numeroConta + ", Nome: "+ this.nomeTitular + ", Saldo: $"+ String.format("%.2f", this.saldoConta);
 	}

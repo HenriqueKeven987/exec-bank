@@ -7,8 +7,6 @@ import entidades.conta;
 
 public class programa {
 
-	private static int opcao;
-
 	public static void main(String[] args) {
 		
 		Locale.setDefault(Locale.US);
@@ -34,10 +32,9 @@ public class programa {
 		
 		if(depositoInicial == 'y') {
 		
-			System.out.print("Digite o valor de Deposito: "); 
+			System.out.print("Digite o valor de Deposito: ");  
 			double depositoIni = entrada.nextDouble();
 			conta = new conta(numeroConta, nomeTitular, depositoIni);
-			
 			
 		}else {
 			conta = new conta(numeroConta, nomeTitular);
@@ -60,24 +57,28 @@ public class programa {
 			switch (opcao) {
 				
 			case 1:				
-				System.out.println("\n Valor de Deposito: ");
+				System.out.println("\nValor de Deposito: ");
 				conta.depositoServ(entrada.nextDouble());
 				System.out.println("Dados Atualizados:");
 				System.out.println(conta);
 			break;
 			
 			case 2:
-				System.out.println("\n Valor de Saque: ");
+				System.out.println("\nValor de Saque: ");
 				conta.sacarSaldo(entrada.nextDouble());
 				System.out.println("Dados Atualizados");
 				System.out.println(conta);
 			break;
 			
 			case 3:
-				System.out.println("\n Digite o novo Nome:");
+				System.out.println("\nDigite o novo Nome:");
 				conta.setnomeTitular(entrada.next());
 				System.out.println("Dados Atualizados");
 				System.out.println(conta);
+			break;
+			
+			case 4:
+				
 			break;
 			
 			default:
@@ -88,8 +89,8 @@ public class programa {
 						
 		}//fim do while
 		
-		for (int f = 0;f < 100 ;f++) {
-			System.out.println();
+		for (int f = 0;f < 10;f++) {
+			System.out.println("");
 		}
 		
 		System.out.println("Obrigado "+ conta.getnomeTitular()+ " Volte sempre!");
